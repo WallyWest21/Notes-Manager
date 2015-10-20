@@ -61,20 +61,20 @@ Public Class DBSQLite
         Dim command As SQLiteCommand
 
         Try
-            strSQL = "CREATE TABLE MainTag (ID int PRIMARY KEY , Designation Varchar(20), TileColor Varchar(20))"
+            strSQL = "CREATE TABLE MainTag (ID integer PRIMARY KEY  , Designation Varchar(20), TileColor Varchar(20))"
             command = New SQLiteCommand(strSQL, m_dbConnection)
             command.ExecuteNonQuery()
         Catch
 
         End Try
 
-        strSQL = "INSERT INTO MainTag (ID, Designation, TileColor) VALUES (NULL, 'Material', 'DarkGoldenRod')"
-        command = New SQLiteCommand(strSQL, m_dbConnection)
-        command.ExecuteNonQuery()
+        'strSQL = "INSERT INTO MainTag (ID, Designation, TileColor) VALUES (NULL, 'Material', 'DarkGoldenRod')"
+        'command = New SQLiteCommand(strSQL, m_dbConnection)
+        'command.ExecuteNonQuery()
 
-        strSQL = "INSERT INTO MainTag (ID, Designation, TileColor) VALUES (NULL, 'SpinPit', 'Crimson')"
-        command = New SQLiteCommand(strSQL, m_dbConnection)
-        command.ExecuteNonQuery()
+        'strSQL = "INSERT INTO MainTag (ID, Designation, TileColor) VALUES (NULL, 'SpinPit', 'Crimson')"
+        'command = New SQLiteCommand(strSQL, m_dbConnection)
+        'command.ExecuteNonQuery()
 
 
         Dim adapter As New SQLiteDataAdapter
