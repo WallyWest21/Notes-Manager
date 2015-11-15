@@ -13,9 +13,11 @@
         sp_MainBody.Children.Add(uc_MainTags)
         'MessageBox.Show("Hi")
         'sp_MainBody.Children.Add(uc_Notes)
-    End Sub
-
-    Private Sub comboBox_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles comboBox.MouseDown
 
     End Sub
+    'Private Sub Mylistbox_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles 
+    '    MsgBox("Hi")
+    'End Sub
+
+
 End Class

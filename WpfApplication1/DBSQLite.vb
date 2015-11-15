@@ -49,11 +49,11 @@ Public Class DBSQLite
 
     Public Function Binding() As DataSet
 
-        Try
-            SQLiteConnection.CreateFile("Notes Manager.sqlite")
-        Catch
+        'Try
+        '    SQLiteConnection.CreateFile("Notes Manager.sqlite")
+        'Catch
 
-        End Try
+        'End Try
 
         m_dbConnection = New SQLiteConnection("Data Source= Notes Manager.sqlite; Version=3;")
         m_dbConnection.Open()
