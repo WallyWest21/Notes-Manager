@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Window1" Height="300" Width="300">
+        Title="Window1" Height="287.216" Width="654.545">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="513*"/>
+            <ColumnDefinition Width="134*"/>
+        </Grid.ColumnDefinitions>
+
         
+        <ListBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button x:Name="btn_Note" Content="Add Note" HorizontalAlignment="Right" DockPanel.Dock="Right" VerticalAlignment="Center" Grid.Column="1" Margin="0,122,32,114" />
+                <TextBlock x:Name="tblk_Note" TextWrapping="Wrap"  Text="HEAT TREAT TO HARDNESS HRC 40-45 PER SAE-AMS-H-6875 AFTER FORMING"  />
+
+
+            </Grid>
+        </ListBox>
+
     </Grid>
 </Window>

@@ -5,16 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfApplication1"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="500" Loaded="UserControl_Loaded">
+             d:DesignHeight="300" d:DesignWidth="500" Loaded="UserControl_Loaded" HorizontalAlignment="Stretch" >
 
     <UserControl.Resources>
         <DataTemplate x:Key="NotesTemplate">
-            <DockPanel  HorizontalAlignment="Center" Height="25" Margin="5" VerticalAlignment="Top" Width=" 500">
-                <TextBlock x:Name="tblk_Note" TextWrapping="Wrap" Text="{Binding Designation}" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="5"/>
-                <Button x:Name="btn_Note" Content="Add Note" HorizontalAlignment="Right"  VerticalAlignment="Center" Margin="5,0"/>
-            </DockPanel>
+            <Grid  HorizontalAlignment="Stretch" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="50*" FrameworkElement.FlowDirection="RightToLeft"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="tblk_Note"  TextWrapping="Wrap" HorizontalAlignment="Left" Text="{Binding Description}"  VerticalAlignment="Center" Grid.Column="0"/>
+                <Button x:Name="btn_Note" Content="Add Note" HorizontalAlignment="Right"  Opacity="1"  Grid.Column=" 1" Margin="5,0,0,0" />
+          </Grid>
         </DataTemplate>
-
     </UserControl.Resources>
 
     <Grid Background="WhiteSmoke">
@@ -24,22 +27,33 @@
 
         </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" Height=" 50" VerticalAlignment="Top" Margin="0,5">
+        <StackPanel Orientation="Horizontal" Height=" 50" VerticalAlignment="Top" Margin="2,5" HorizontalAlignment="Stretch" Background="#FFFBF8F8">
+            <StackPanel.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
+            </StackPanel.BitmapEffect>
             <TextBlock Text="Material" Margin="10,5" FontSize="24"/>
             <ComboBox Width=" 100" Height=" 15" Margin="10,5"  />
             <ComboBox Width=" 100" Height=" 15" Margin="10,5"  />
         </StackPanel>
 
-        <ListBox x:Name="MyListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Height="Auto" Margin="0,0,0,0" BorderThickness="0" ItemTemplate="{StaticResource NotesTemplate}" Grid.Row="1" Grid.ColumnSpan="3">
-            <ListBox.ItemsPanel>
+        <ListBox x:Name="MyListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource NotesTemplate}" Grid.Row="1"  HorizontalAlignment="Stretch" BorderThickness="0" >
+            <ListBox.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
+            </ListBox.BitmapEffect>
+<ListBox.ItemContainerStyle>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </ListBox.ItemContainerStyle>
+            <!--<ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel  Margin="0">
-                        <!--<i:Interaction.Behaviors>
+                    <WrapPanel  Margin="0" HorizontalAlignment="Stretch">
+                        <i:Interaction.Behaviors>
                             <ei:FluidMoveBehavior AppliesTo="Children" Duration="0:0:0.5"/>
-                        </i:Interaction.Behaviors>-->
+                        </i:Interaction.Behaviors>
                     </WrapPanel>
                 </ItemsPanelTemplate>
-            </ListBox.ItemsPanel>
+            </ListBox.ItemsPanel>-->
 
 
 

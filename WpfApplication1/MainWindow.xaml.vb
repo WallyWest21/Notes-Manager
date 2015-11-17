@@ -1,4 +1,4 @@
-﻿Class MainWindow
+﻿Public Class MainWindow
     Dim DB As New DBSQLite
     Dim uc_MainTags As New MainTags
     Dim uc_Notes As New Notes
@@ -19,9 +19,16 @@
         'sp_MainBody.Children.Add(uc_Notes)
 
     End Sub
+
+    Private Sub btn_Cart_Click(sender As Object, e As RoutedEventArgs) Handles btn_Cart.Click
+        sp_MainBody.Children.Clear()
+        sp_MainBody.Children.Add(uc_Notes)
+    End Sub
     'Private Sub Mylistbox_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles 
     '    MsgBox("Hi")
     'End Sub
 
-
+    Public Sub SelectedMainTag()
+        sp_MainBody.Children.Add(uc_Notes)
+    End Sub
 End Class

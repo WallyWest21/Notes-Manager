@@ -87,6 +87,15 @@ Public Class DBSQLite
         adapter.SelectCommand = command
         adapter.Fill(dataset, "MainTags")
 
+        'adapter.Dispose()
+        'command.Dispose()
+        'm_dbConnection.Close()
+
+        'command = New SQLiteCommand(m_dbConnection)
+        command.CommandText = "SELECT * FROM Note"
+        adapter.SelectCommand = command
+        adapter.Fill(dataset, "Notes")
+
         adapter.Dispose()
         command.Dispose()
         m_dbConnection.Close()
