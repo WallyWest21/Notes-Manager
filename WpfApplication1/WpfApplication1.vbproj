@@ -95,6 +95,7 @@
     <Compile Include="Notes.xaml.vb">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIElementz.vb" />
     <Compile Include="Window1.xaml.vb">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
