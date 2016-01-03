@@ -92,6 +92,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Add a new note.xaml.vb">
+      <DependentUpon>Add a new note.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Notes.xaml.vb">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
@@ -99,6 +102,10 @@
     <Compile Include="Window1.xaml.vb">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Add a new note.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainTags.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
