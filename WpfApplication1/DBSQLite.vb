@@ -5,8 +5,7 @@ Public Class DBSQLite
     Dim ConnectionString As String
     Dim m_dbConnection As SQLiteConnection
 
-    'Public Sub Connect()
-
+    '
     '    Try
     '        SQLiteConnection.CreateFile("Notes Manager.sqlite")
     '    Catch

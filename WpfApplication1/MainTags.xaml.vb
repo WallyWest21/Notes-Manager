@@ -7,6 +7,7 @@ Public Class MainTags
     Dim uc_Notes As Notes
     Public Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
         MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
+        'MyListBox.DataContext = DB.Binding.Tables("MainTags")
 
     End Sub
 

@@ -17,6 +17,19 @@ Public Class Window1
         lst1.Add("two")
         lst1.Add("three")
         listbox1.ItemsSource = lst1
+
+
+
+
+
+
+
+
+
+    End Sub
+
+    Private Sub listbox1_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles listbox1.SelectionChanged
+        MsgBox("What's good??")
     End Sub
 
 

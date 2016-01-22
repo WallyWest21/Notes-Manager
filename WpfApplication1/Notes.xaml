@@ -23,6 +23,7 @@
                 <DockPanel Grid.Column="0" Grid.Row="1" >
                     <TextBlock x:Name="tblk_creator" Text="{Binding Createdby}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
                     <TextBlock x:Name="tblk_revision" Text="{Binding Revision}" DockPanel.Dock="Left" FontSize="12" Foreground="Gray" Margin="2,0"/>
+                    <!--<CheckBox x:Name="chkbx_selection" DockPanel.Dock="Right" Margin="2,0" IsChecked="{Binding IsSelected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
                 </DockPanel>
             </Grid>
         </DataTemplate>
@@ -48,11 +49,11 @@
             <ListBox.BitmapEffect>
                 <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
             </ListBox.BitmapEffect>
-<ListBox.ItemContainerStyle>
-        <Style TargetType="ListBoxItem">
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-        </Style>
-    </ListBox.ItemContainerStyle>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
             <!--<ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel  Margin="0" HorizontalAlignment="Stretch">
@@ -63,10 +64,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>-->
 
-
-
         </ListBox>
-        
-      
     </Grid>
 </UserControl>

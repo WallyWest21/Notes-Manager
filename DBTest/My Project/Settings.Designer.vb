@@ -56,8 +56,8 @@ Partial Friend NotInheritable Class MySettings
     <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""|DataDirectory|\Mike's Video Store"& _ 
-        ".accdb""")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=""C:\Users\Al\Dropbox\Programming\Ma"& _ 
+        "cro Catalog\Notes Manager\WpfApplication1\Mike's Video Store.accdb""")>  _
     Public ReadOnly Property Mike_s_Video_StoreConnectionString() As String
         Get
             Return CType(Me("Mike_s_Video_StoreConnectionString"),String)
@@ -73,9 +73,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.WpfApplication1.MySettings
+        Friend ReadOnly Property Settings() As Global.DBTest.MySettings
             Get
-                Return Global.WpfApplication1.MySettings.Default
+                Return Global.DBTest.MySettings.Default
             End Get
         End Property
     End Module
