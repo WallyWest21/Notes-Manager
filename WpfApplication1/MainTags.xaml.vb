@@ -1,4 +1,12 @@
 ﻿Imports System.Threading
+Imports System
+Imports System.Linq
+Imports System.Linq.Expressions
+Imports System.Collections.Generic
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Data.Common
+Imports System.Globalization
 
 Public Class MainTags
     Dim DB As New DBSQLite
@@ -6,7 +14,14 @@ Public Class MainTags
     Dim UIE As UIElementz
     Dim uc_Notes As Notes
     Public Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
-        MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
+
+        Dim MainTags = From maintag In DB.Binding.Tables("MainTags").AsDataView
+                       Select maintag
+        'Where maintag("Symbol").ToString = "BS"
+
+        'MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
+        MyListBox.ItemsSource = MainTags
+
         'MyListBox.DataContext = DB.Binding.Tables("MainTags")
 
     End Sub

@@ -1,4 +1,5 @@
 ﻿Imports System.Collections.ObjectModel
+Imports System.Data
 Imports WpfApplication1.MainWindow
 
 Public Class Notes
@@ -8,8 +9,17 @@ Public Class Notes
 
 
         'Dim MyNotes As New ObservableCollection(Of
+        'Dim products As DataTable = DB.Binding.Tables("Notes")
+        Dim Mynotes = From note In DB.Binding.Tables("Notes").AsDataView
+                      Where note("IsSelected").ToString = "False"
+                      Select note
 
-        MyListBox.ItemsSource = DB.Binding.Tables("Notes").DefaultView
+
+        'Where note.Field(Of Boolean)("IsSelected") = True
+
+
+        MyListBox.ItemsSource = Mynotes
+        'MyListBox.ItemsSource = DB.Binding.Tables("Notes").DefaultView
     End Sub
     Public SelectedNotesList As New ObservableCollection(Of cl_ListBoxNotes)
     Public SelectedNotesIDList As New List(Of String)
