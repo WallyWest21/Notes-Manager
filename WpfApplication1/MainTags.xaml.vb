@@ -17,20 +17,15 @@ Public Class MainTags
     Public obsv_Maintags As New ObservableCollection(Of DataRow)
     Public Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
 
-        Dim MainTags = From maintag In DB.Binding.Tables("MainTags").AsDataView
-                       Select maintag
-
         Dim row As DataRow
-
         For Each row In DB.Binding.Tables("MainTags").Rows
             obsv_Maintags.Add(row)
         Next
 
+        Dim MainTags = (From maintag In obsv_Maintags.CopyToDataTable.AsDataView
+                        Select maintag)
 
-        'MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
-        MyListBox.ItemsSource = New DataView(obsv_Maintags.CopyToDataTable)
-
-
+        MyListBox.ItemsSource = MainTags
 
     End Sub
 
