@@ -119,6 +119,9 @@
       <DependentUpon>Add a new note.xaml</DependentUpon>
     </Compile>
     <Compile Include="cl_SelectedNotes.vb" />
+    <Compile Include="Database\db_Note.vb" />
+    <Compile Include="Database\db_MainTag.vb" />
+    <Compile Include="Database\db_NotesMagerContext.vb" />
     <Compile Include="Notes.xaml.vb">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>

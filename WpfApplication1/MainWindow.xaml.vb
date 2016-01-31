@@ -9,6 +9,7 @@
         'uc_MainTags.SelectMainTag()
         'sp_MainBody.Children.Clear()
         'sp_MainBody.Children.Add(uc_MainTags)
+
         UIE.AddUserControl(sp_MainBody, uc_MainTags)
     End Sub
 

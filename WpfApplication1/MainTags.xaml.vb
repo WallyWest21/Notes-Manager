@@ -7,22 +7,30 @@ Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Data.Common
 Imports System.Globalization
+Imports System.Collections.ObjectModel
 
 Public Class MainTags
     Dim DB As New DBSQLite
     Dim win_MainWindow As MainWindow
     Dim UIE As UIElementz
     Dim uc_Notes As Notes
+    Public obsv_Maintags As New ObservableCollection(Of DataRow)
     Public Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
 
         Dim MainTags = From maintag In DB.Binding.Tables("MainTags").AsDataView
                        Select maintag
-        'Where maintag("Symbol").ToString = "BS"
+
+        Dim row As DataRow
+
+        For Each row In DB.Binding.Tables("MainTags").Rows
+            obsv_Maintags.Add(row)
+        Next
+
 
         'MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
-        MyListBox.ItemsSource = MainTags
+        MyListBox.ItemsSource = New DataView(obsv_Maintags.CopyToDataTable)
 
-        'MyListBox.DataContext = DB.Binding.Tables("MainTags")
+
 
     End Sub
 

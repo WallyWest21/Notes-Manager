@@ -8,11 +8,13 @@ Public Class Notes
     Private Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
 
 
-        'Dim MyNotes As New ObservableCollection(Of
+
         'Dim products As DataTable = DB.Binding.Tables("Notes")
+
         Dim Mynotes = From note In DB.Binding.Tables("Notes").AsDataView
                       Where note("IsSelected").ToString = "False"
                       Select note
+        'Dim obsv As New ObservableCollection(Of String)(Mynotes)
 
 
         'Where note.Field(Of Boolean)("IsSelected") = True
