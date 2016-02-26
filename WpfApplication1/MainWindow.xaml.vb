@@ -4,7 +4,7 @@
     Dim uc_Notes As New Notes
     Dim UIE As New UIElementz
     Dim win_ANN As New Add_a_new_note
-    Dim uc_Checkout As New Checkout
+
     Dim SelectedNotes As New Dictionary(Of String, Object)
     Dim count As Integer
     Private Sub Tblk_Home_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles Tblk_Home.MouseDown
@@ -43,6 +43,7 @@
         'CtrlBinding.Path = New PropertyPath("Description")
         btn_Cart.Content = "Cart (" & count & ")"
 
+        Dim uc_Checkout As New Checkout(uc_Notes)
         UIE.AddUserControl(sp_MainBody, uc_Checkout)
 
         'btn_Cart.DataContext = uc_Notes.MyListBox.SelectedItems.Count
