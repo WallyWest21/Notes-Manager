@@ -18,9 +18,6 @@
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
 
-
-
-
         'MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
         UIE.AddUserControl(sp_MainBody, uc_MainTags)
         'sp_MainBody.Children.Add(uc_MainTags)

@@ -33,7 +33,7 @@
         <StackPanel Background="White" DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <TextBlock Text="Notes to send to drawing" FontSize="48" TextWrapping="WrapWithOverflow"/>
           
-            <ListBox x:Name="MyCheckoutListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource NotesTemplate}" Grid.Row="1"  HorizontalAlignment="Stretch" BorderThickness="0" SelectionMode="Multiple" >
+            <ListBox x:Name="MyCheckoutListBox"  Height="Auto" Margin="2"  ItemTemplate="{StaticResource NotesTemplate}" Grid.Row="1"  HorizontalAlignment="Stretch" BorderThickness="0" >
                 <ListBox.BitmapEffect>
                     <DropShadowBitmapEffect Color="Black" Direction="270" ShadowDepth=".15" Softness=".10"/>
                 </ListBox.BitmapEffect>
@@ -49,7 +49,7 @@
         <Button Content="send to drawing"
                 VerticalAlignment="Bottom" HorizontalAlignment="Center" 
                 Background="DarkBlue"  Width="150" Height="50" 
-                Foreground="White" FontFamily="Segoe UI LIght" FontSize="20" Margin="0,0,0,10"
+                Foreground="White" FontFamily="Segoe UI LIght" FontSize="20" Margin="0,0,0,10" Click="Button_Click"
                 
                 
                 />
