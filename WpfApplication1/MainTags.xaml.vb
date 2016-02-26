@@ -22,8 +22,8 @@ Public Class MainTags
             obsv_Maintags.Add(row)
         Next
 
-        Dim MainTags = (From maintag In obsv_Maintags.CopyToDataTable.AsDataView
-                        Select maintag)
+        Dim MainTags = From maintag In obsv_Maintags.CopyToDataTable.AsDataView
+                       Select maintag
 
         MyListBox.ItemsSource = MainTags
 

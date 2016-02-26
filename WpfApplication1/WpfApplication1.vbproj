@@ -118,6 +118,9 @@
     <Compile Include="Add a new note.xaml.vb">
       <DependentUpon>Add a new note.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Checkout.xaml.vb">
+      <DependentUpon>Checkout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="cl_SelectedNotes.vb" />
     <Compile Include="Database\db_Note.vb" />
     <Compile Include="Database\db_MainTag.vb" />
@@ -135,6 +138,10 @@
       <DependentUpon>_Mike_s_Video_StoreDataSet.xsd</DependentUpon>
     </Compile>
     <Page Include="Add a new note.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Checkout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -4,6 +4,9 @@
     Dim uc_Notes As New Notes
     Dim UIE As New UIElementz
     Dim win_ANN As New Add_a_new_note
+    Dim uc_Checkout As New Checkout
+    Dim SelectedNotes As New Dictionary(Of String, Object)
+    Dim count As Integer
     Private Sub Tblk_Home_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles Tblk_Home.MouseDown
         'DB.Connect()
         'uc_MainTags.SelectMainTag()
@@ -14,6 +17,10 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
+
+
+
+
         'MyListBox.ItemsSource = DB.Binding.Tables("MainTags").DefaultView
         UIE.AddUserControl(sp_MainBody, uc_MainTags)
         'sp_MainBody.Children.Add(uc_MainTags)
@@ -28,18 +35,25 @@
         'sp_MainBody.Children.Clear()
         'sp_MainBody.Children.Add(uc_Notes)
 
-        Dim CtrlBinding As New Binding()
-        CtrlBinding.Source = uc_Notes.MyListBox.SelectedItem
-        CtrlBinding.Path = New PropertyPath("Description")
+        Dim count As Integer = uc_Notes.fctoSelectedNotes.Count
+
+        'Dim CtrlBinding As New Binding()
+
+        'CtrlBinding.Source = uc_Notes.MyListBox.SelectedItem
+        'CtrlBinding.Path = New PropertyPath("Description")
+        btn_Cart.Content = "Cart (" & count & ")"
+
+        UIE.AddUserControl(sp_MainBody, uc_Checkout)
 
         'btn_Cart.DataContext = uc_Notes.MyListBox.SelectedItems.Count
-        btn_Cart.SetBinding(btn_Cart.Content, CtrlBinding)
+        'btn_Cart.SetBinding(btn_Cart.Content, CtrlBinding)
     End Sub
     'Private Sub Mylistbox_MouseDown(sender As Object, e As MouseButtonEventArgs) Handles 
     '    MsgBox("Hi")
     'End Sub
 
     Public Sub SelectedMainTag()
+
         sp_MainBody.Children.Add(uc_Notes)
     End Sub
 

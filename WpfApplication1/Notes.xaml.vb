@@ -25,16 +25,34 @@ Public Class Notes
     End Sub
     Public SelectedNotesList As New ObservableCollection(Of cl_ListBoxNotes)
     Public SelectedNotesIDList As New List(Of String)
-    Public Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-        If MyListBox.SelectedItems.Count > 0 Then
+    Public oSelectedNotes As New Dictionary(Of String, Object)
+
+    'Public Sub New(ByRef SelectedNotes As Dictionary(Of String, Object))
+
+    '    SelectedNotes = oSelectedNotes
+    '    ' This call is required by the designer.
+    '    InitializeComponent()
 
 
-            SelectedNotesList = MyListBox.SelectedItems
-        End If
-    End Sub
+
+    '    'If MyListBox.SelectedItems.Count > 0 Then
+    '    '    SelectedNotesList = MyListBox.SelectedItems
+    '    'End If
+
+
+
+
+    'End Sub
     Private Sub MyListBox_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles MyListBox.SelectionChanged
+
+        Dim tempSelectedNotes As New Dictionary(Of String, Object)
+
+
+
+
+
+
+
         'MyListBox.SelectionMode = SelectionMode.Multiple
 
         'If MyListBox.SelectedItem = True Then
@@ -48,24 +66,70 @@ Public Class Notes
         'SelectedNotesList.Add MyListBox.SelectedItem
         'MsgBox(MyListBox.SelectedItems.Count)
         'MsgBox(MyListBox.SelectedItem.Description)
-        Dim item
+        Dim SeledctedItem As Object
+        Dim Item As Object
+
 
         Dim NoteID As String
-        For Each item In MyListBox.SelectedItems
+        'For Each item In MyListBox.SelectedItems
+
+        For Each SeledctedItem In MyListBox.SelectedItems
 
 
             'MsgBox(item.row.itemarray(1))
-            MsgBox(MyListBox.SelectedIndex)
+            'MsgBox(MyListBox.SelectedIndex)
 
             'If SelectedNotesIDList.Contains(item.row.itemarray(0).ToString) Then
             '    MsgBox("It's already added")
             'Else
             '    MsgBox("Added")
-            SelectedNotesIDList.Add(item.row.itemarray(0).ToString)
+            'SelectedNotesIDList.Add(item.row.itemarray(0).ToString)
             'End If
 
+            Dim key As String = SeledctedItem.row.itemarray(0).ToString
+
+            'If tempSelectedNotes.Count > 0 Then
+
+
+
+            'If tempSelectedNotes.ContainsKey(key) Then
+            '    tempSelectedNotes.Remove(key)
+            'Else
+            tempSelectedNotes.Add(key, SeledctedItem.row.itemarray)
+
+            'End If
+
+            'ElseIf tempSelectedNotes.Count = 0 Then
+
+            'tempSelectedNotes.Add(key, SeledctedItem.row.itemarray)
+
+
+            'End If
         Next
-        clSN.SelectedNotesCount = SelectedNotesIDList.Count
+
+
+        For Each Item In MyListBox.Items
+            Dim otherkey As String = Item.row.itemarray(0).ToString
+
+            For Each temp In tempSelectedNotes
+
+                If temp.Key = otherkey Then
+                    If Not oSelectedNotes.ContainsKey(temp.Key) Then
+                        oSelectedNotes.Add(otherkey, Item.row.itemarray)
+                    End If
+                    Exit For
+                End If
+                oSelectedNotes.Remove(otherkey)
+
+            Next
+
+
+
+        Next
+
+
+
+        'clSN.SelectedNotesCount = SelectedNotesIDList.Count
         'For x = 0 To MyListBox.Items.Count - 1
 
         '    ' Determine if the item is selected.
@@ -96,6 +160,10 @@ Public Class Notes
         'Next
 
     End Sub
+
+    Public Function fctoSelectedNotes() As Dictionary(Of String, Object)
+        Return oSelectedNotes
+    End Function
 
     Public Class cl_ListBoxNotes
         Dim Description As String, Createdby As String, Revision As String
