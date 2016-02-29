@@ -15,6 +15,8 @@ Public Class MainTags
     Dim UIE As UIElementz
     Dim uc_Notes As Notes
     Public obsv_Maintags As New ObservableCollection(Of DataRow)
+    'Dim obsv_Maintags As New List(Of DataRow)
+
     Public Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
 
         Dim row As DataRow

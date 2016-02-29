@@ -5,6 +5,16 @@ Imports WpfApplication1.MainWindow
 Public Class Notes
     Public clSN As New cl_SelectedNotes
     Dim DB As New DBSQLite
+    'Dim mainWin As MainWindow
+
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
     Private Sub UserControl_Loaded(sender As Object, e As RoutedEventArgs)
         'Dim products As DataTable = DB.Binding.Tables("Notes")
 
@@ -60,6 +70,8 @@ Public Class Notes
             Next
         Next
         clNotes = Nothing
+
+        Application.Current.Windows.OfType(Of MainWindow)().First().Update_btn_cart()
     End Sub
 
     Public Function fctoSelectedNotes() As Dictionary(Of String, cl_ListBoxNotes)

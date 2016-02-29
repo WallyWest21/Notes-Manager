@@ -1,7 +1,7 @@
 ﻿Public Class MainWindow
     Dim DB As New DBSQLite
     Dim uc_MainTags As New MainTags
-    Dim uc_Notes As New Notes
+    Dim uc_Notes As New Notes()
     Dim UIE As New UIElementz
     Dim win_ANN As New Add_a_new_note
 
@@ -59,5 +59,7 @@
         win_ANN.Show()
     End Sub
 
-
+    Public Sub Update_btn_cart()
+        btn_Cart.Content = "Cart (" & uc_Notes.fctoSelectedNotes.Count & ")"
+    End Sub
 End Class
