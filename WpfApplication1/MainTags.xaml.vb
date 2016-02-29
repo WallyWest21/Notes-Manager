@@ -28,12 +28,6 @@ Public Class MainTags
         MyListBox.ItemsSource = MainTags
 
     End Sub
-
-    Public Sub SelectMainTag()
-
-    End Sub
-
-
     Private Sub Label_MouseDown(sender As Object, e As MouseButtonEventArgs)
         'MsgBox(sender.Content)
         'MsgBox(Application.Current.Windows.OfType(Of MainWindow)().First().ActualWidth)

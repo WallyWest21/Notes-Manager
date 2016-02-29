@@ -48,8 +48,9 @@ Public Class Notes
 
                         clNotes.ID = Item.row.itemarray(0).ToString
                         clNotes.Description = Item.row.itemarray(1).ToString
-                        clNotes.Createdby = Item.row.itemarray(2).ToString
-                        clNotes.Revision = Item.row.itemarray(3).ToString
+                        clNotes.Revision = Item.row.itemarray(2).ToString
+                        clNotes.CreationDate = Convert.ToDateTime(Item.row.itemarray(3).ToString)
+                        clNotes.Createdby = Item.row.itemarray(4).ToString
                         clNotes.FlagNote = False
                         oSelectedNotes.Add(otherkey, clNotes)
                     End If
@@ -66,7 +67,7 @@ Public Class Notes
     End Function
 
     Public Class cl_ListBoxNotes
-        Public Description As String, Createdby As String, Revision As String, ID As String, FlagNote As Boolean
+        Public Description As String, Createdby As String, Revision As String, ID As String, FlagNote As Boolean, CreationDate As Date
     End Class
 
 End Class

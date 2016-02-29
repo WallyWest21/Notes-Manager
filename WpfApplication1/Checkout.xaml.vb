@@ -24,4 +24,14 @@ Public Class Checkout
 
         oDrawing.WriteNotesToDrawing(Drawingnotes)
     End Sub
+
+    Private Sub ComboBox_Loaded(sender As Object, e As RoutedEventArgs)
+        Dim cb As ComboBox = DirectCast(sender, ComboBox)
+        If oDrawing.ListOfOpenDrawingDocuments.Count > 0 Then
+            cb.ItemsSource = oDrawing.ListOfOpenDrawingDocuments
+        Else
+            cb.Items.Add("No Open Drawing")
+
+        End If
+    End Sub
 End Class
