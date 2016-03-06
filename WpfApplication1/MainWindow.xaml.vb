@@ -62,4 +62,8 @@
     Public Sub Update_btn_cart()
         btn_Cart.Content = "Cart (" & uc_Notes.fctoSelectedNotes.Count & ")"
     End Sub
+
+    Private Sub StackPanel_MouseDown(sender As Object, e As MouseButtonEventArgs)
+
+    End Sub
 End Class

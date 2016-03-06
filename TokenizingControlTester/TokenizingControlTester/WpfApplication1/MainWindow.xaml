@@ -1,0 +1,59 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" Loaded="Window_Loaded">
+    <Window.Resources>
+
+        <Style x:Key="myStyle" TargetType="{x:Type StackPanel}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="true">
+                    <Setter Property="Cursor" Value="IBeam" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="false">
+                    <Setter Property="Cursor" Value="Arrow" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <DataTemplate x:Key="NameTokenTemplate">
+
+            <Border x:Name="border" BorderBrush="#FF7E7E7E" BorderThickness="2" CornerRadius="5" Height="Auto" d:DesignWidth="139" d:DesignHeight="40" Padding="5,3" Margin="3,0,3,3">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFD0A0" Offset="0"/>
+                        <GradientStop Color="#FFAB5600" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid HorizontalAlignment="Left" Width="Auto">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.21*"/>
+                        <ColumnDefinition Width="0.79*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock TextWrapping="NoWrap" Text="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Margin="10,0,0,0" FontWeight="Bold"/>
+                </Grid>
+            </Border>
+            <!--<DataTemplate.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+                </EventTrigger>
+            </DataTemplate.Triggers>-->
+        </DataTemplate>
+
+
+    </Window.Resources>
+ 
+
+    <Grid x:Name="Grid1">
+        <StackPanel x:Name="sp_Main" HorizontalAlignment="Left" Height="47" Margin="108,99,0,0" VerticalAlignment="Top" Width="281" Background="#FFF3431B" Style="{StaticResource ResourceKey=myStyle}" />
+        <!--<TextBox x:Name="textBox" HorizontalAlignment="Left" Height="35" Margin="126,209,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="128"/>-->
+        <StackPanel Background="AliceBlue" HorizontalAlignment="Left" Height="35" Margin="160,35,0,0" VerticalAlignment="Top" Width="229" Style="{StaticResource ResourceKey=myStyle}" />
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="67" Margin="117,198,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="89" Background="#FFEAEA36"/>
+
+    </Grid>
+</Window>

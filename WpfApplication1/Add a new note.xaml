@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplication1"
         mc:Ignorable="d"
-        Title="Add_a_new_note" Height="300" Width="600" Background="#FF404148">
+        Title="Add_a_new_note" Height="600" Width="600" Topmost="True" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="35*"/>
@@ -14,7 +14,7 @@
             <ColumnDefinition Width="168*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="35*"/>
             <RowDefinition Height="33*"/>
@@ -25,26 +25,35 @@
             <RowDefinition Height="38*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Height="20" Margin="150,10,0,0" VerticalAlignment="Top" Width="50" Grid.Row="8" Grid.Column="2"/>
-        <Button x:Name="button1" Content="Exit" HorizontalAlignment="Left" Margin="16,10,0,0" VerticalAlignment="Top" Width="50" Grid.Row="8" Grid.Column="3"/>
-        <TextBlock x:Name="Tbl_Title"  Height="33"   Foreground="#3498db" RenderTransformOrigin="0.5,0.5" Margin="-100,12,102,22" FontSize="36" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" >
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform>
-           <Run Text="add" FontFamily="Segoe UI Semibold"/><Run Text="a" FontFamily="Segoe UI light"/><Run Text="new" FontFamily="Segoe UI Semibold"/><Run Text="note" FontFamily="Segoe UI light"/>
+        <Button x:Name="button" Content="Save" HorizontalAlignment="Left" Height="20" Margin="55,26,0,0" VerticalAlignment="Top" Width="50" Grid.Row="6" Grid.Column="3" Background="{x:Null}"/>
+        <Button x:Name="button1" Content="Exit" HorizontalAlignment="Left" Margin="110,26,0,0" VerticalAlignment="Top" Width="50" Grid.Row="6" Grid.Column="3"/>
+        <TextBlock x:Name="Tbl_Title"    Foreground="Crimson"   FontSize="48" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="1" VerticalAlignment="Center" >         
+           <Run Text="add" FontWeight="SemiBold"/><Run Text="a" FontWeight="UltraLight"/><Run Text="new" FontWeight="SemiBold"/><Run Text="note" FontWeight="UltraLight"/>
         </TextBlock>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Stretch" Height="25"  VerticalAlignment="Bottom"  Grid.Column="1" Foreground="White"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Height="25"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch"  Grid.Column="1" Grid.Row="1" />
-        <TextBox x:Name="textBox1" Grid.Column="3" HorizontalAlignment="Stretch" Height="151"  Grid.Row="2" Grid.RowSpan="5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Margin="0,10,5,10" />
-        <Label x:Name="label1" Content="Label" Grid.Column="3" HorizontalAlignment="Stretch" Height="25" Grid.Row="1" VerticalAlignment="Stretch" Foreground="White"/>
-        <Label x:Name="label_Copy" Content="Label" HorizontalAlignment="Stretch" Height="25"  VerticalAlignment="Bottom"  Grid.Column="2" Foreground="White" Margin="5,0,17,0"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Stretch" Height="25"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="1" Margin="5,0,17,0" />
-        <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Height="10"  Grid.Row="9" VerticalAlignment="Bottom" Background="#3498db"/>
 
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="4" Fill="Crimson" HorizontalAlignment="Stretch" Height="1"  VerticalAlignment="Center" />
+
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Stretch" Height="25"  VerticalAlignment="Bottom"  Grid.Column="1" Foreground="Black" Margin="0,0,0,31" Grid.Row="2" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Stretch" Height="25"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch"  Grid.Column="1" Grid.Row="3" Margin="0,2,0,0" />
+        <TextBox x:Name="textBox1" Grid.Column="1" HorizontalAlignment="Stretch"  Grid.Row="7" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch" Margin="0,0,74,6" Grid.ColumnSpan="2" />
+        <Label x:Name="label1" Content="Label" Grid.Column="1" HorizontalAlignment="Stretch" Height="25" Grid.Row="6" VerticalAlignment="Stretch" Foreground="Black" Margin="0,4,19,0"/>
+        <Label x:Name="label_Copy" Content="Label" HorizontalAlignment="Stretch" Height="25"  VerticalAlignment="Bottom"  Grid.Column="2" Foreground="Black" Margin="5,0,17,0" Grid.Row="2"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Stretch" Height="25"  TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Stretch"  Grid.Column="2" Grid.Row="3" Margin="0,2,22,0" />
+        <StackPanel Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Height="10"  Grid.Row="9" VerticalAlignment="Bottom" Background="Crimson"/>
+
+        <StackPanel Grid.Row="8" Grid.Column="3" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalAlignment="Center"  Margin="5,0,-35,20" ToolTip="Add a new note" >
+            <Grid HorizontalAlignment="Center" Height="auto" Width="Auto"  >
+                <Ellipse HorizontalAlignment="Center" VerticalAlignment="Center"        Fill="Crimson"        Height="50"        Width="50">
+                    <Ellipse.Effect>
+                        <DropShadowEffect ShadowDepth="1" Direction="270"/>
+                    </Ellipse.Effect>
+                </Ellipse>
+
+                <Label x:Name="AddNote" VerticalAlignment="Center" HorizontalAlignment="Center" 
+        			HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+        			Content="X" Foreground="White" FontSize="36" Padding="0,0,0,5"
+                />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Window>
