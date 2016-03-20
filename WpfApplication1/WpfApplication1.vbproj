@@ -129,20 +129,12 @@
       <DependentUpon>Checkout.xaml</DependentUpon>
     </Compile>
     <Compile Include="cl_SelectedNotes.vb" />
-    <Compile Include="Database\db_Note.vb" />
-    <Compile Include="Database\db_MainTag.vb" />
-    <Compile Include="Database\db_NotesMagerContext.vb" />
     <Compile Include="Notes.xaml.vb">
       <DependentUpon>Notes.xaml</DependentUpon>
     </Compile>
     <Compile Include="UIElementz.vb" />
     <Compile Include="Window1.xaml.vb">
       <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="_Mike_s_Video_StoreDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_Mike_s_Video_StoreDataSet.xsd</DependentUpon>
     </Compile>
     <Page Include="Add a new note.xaml">
       <SubType>Designer</SubType>
@@ -229,25 +221,11 @@
     </None>
     <AppDesigner Include="My Project\" />
     <None Include="packages.config" />
-    <None Include="_Mike_s_Video_StoreDataSet.xsc">
-      <DependentUpon>_Mike_s_Video_StoreDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_Mike_s_Video_StoreDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_Mike_s_Video_StoreDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="_Mike_s_Video_StoreDataSet.xss">
-      <DependentUpon>_Mike_s_Video_StoreDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mike%27s Video Store.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Resource Include="notes_manager_icon_zRE_icon.ico" />
   </ItemGroup>
   <ItemGroup>
